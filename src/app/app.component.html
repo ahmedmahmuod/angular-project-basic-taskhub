@@ -1,0 +1,32 @@
+<!-- App Header Component -->
+<app-header />
+<!-- Main Content -->
+<main>
+  <!-- Show all users of tasks -->
+  <ul id="users">
+    @for (item of users; track $index) {
+    <li class="listUsers">
+      <app-user
+        [selected]="item.id === selectUserId"
+        (currentUser)="selectedUser($event)"
+        [id]="item.id"
+        [user]="item"
+      />
+    </li>
+    }
+  </ul>
+  <!-- Show all Tasks of users -->
+  @if (selectUserId) {
+  <app-tasks [userId]="selectUser.id" [name]="selectUser.name" />
+  } @else {
+  <div class="relative">
+    <p id="fallback">Select a user to see their tasks!</p>
+    <img
+      class="arrow left-12 top-20 rotate-150deg absolute"
+      src="../assets/undraw_arrow.svg"
+      alt="arrow"
+      width="100px"
+    />
+  </div>
+  }
+</main>

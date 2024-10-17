@@ -1,0 +1,8 @@
+<article>
+        <h2 class="font-bold text-gray-900">{{userTask.title}}</h2>
+        <time class="italic underline text-sm font-bold text-gray-900" >{{userTask.dueDate | date:'fullDate'}}</time>
+        <p class="text-gray-900">{{userTask.summary}}</p>
+        <p class="actions">
+            <button (click)="ignoreTask()" >Complete</button>
+        </p>
+</article>

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.parent {
+  margin-bottom: 20px
+}
+
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2rem;
+  font-size: 1.15rem;
+  
+}
+
+#users {
+  list-style: none;
+  margin: 0px;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+}
+
+#fallback {
+  font-size: 1.15rem;
+  margin: 0;
+  text-align: center;
+  margin: 0px;
+}
+
+.arrow {
+  transform: rotate(150deg);
+}
+
+@media (min-width: 768px) {
+  main {
+    margin: 4rem auto;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  #users {
+    flex-direction: column;
+  }
+
+  #fallback {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
